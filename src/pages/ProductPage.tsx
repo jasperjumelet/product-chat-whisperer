@@ -1,6 +1,7 @@
 
 import * as React from "react";
-import ProductCard from "@/components/ProductCard";
+// import ProductCard from "@/components/ProductCard";
+import MugModel from "@/components/MugModel";
 import ChatModal from "@/components/ChatModal";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
@@ -8,12 +9,21 @@ import { useNavigate } from "react-router-dom";
 
 // Default coffee cup with empty/white label
 const DEFAULT_CUP_IMG =
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80";
+  "image.png";
 
 export default function ProductPage() {
   const [chatOpen, setChatOpen] = React.useState(false);
   const [mockImage, setMockImage] = React.useState(DEFAULT_CUP_IMG);
 
+  const handleCustomizeClick = () => {
+    setChatOpen(true);
+  };
+  const PRODUCT = {
+    name: "Customizable Coffee Cup",
+    price: "$8.99",
+    description:
+      "Design your very own coffee cup! Generate a custom image via chat and see it on your mockup instantly.",
+  };
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary to-muted flex flex-col items-center">
@@ -33,7 +43,24 @@ export default function ProductPage() {
             We'll generate 4 images—pick your favorite to see it on your mockup in real-time.
           </p>
         </div>
-        <ProductCard mockImageUrl={mockImage} onClick={() => setChatOpen(true)} />
+        {/* Replace ProductCard with 3D model */}
+        <div className="border rounded-lg overflow-hidden">
+          <MugModel imageUrl={mockImage} />
+        </div>
+        <h2 className="text-2xl font-semibold mb-1">{PRODUCT.name}</h2>
+          <span className="text-xl font-bold text-primary mb-2">{PRODUCT.price}</span>
+          <p className="text-muted-foreground mb-6 text-center">{PRODUCT.description}</p>
+          <Button
+            className="w-full group-hover:scale-105 transition-transform duration-200"
+            tabIndex={-1}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleCustomizeClick();
+            }}
+          >
+            Customize &amp; Chat
+          </Button>
+        {/* <ProductCard mockImageUrl={mockImage} onClick={() => setChatOpen(true)} /> */}
         <div className="w-full flex justify-center mt-8">
           <Button
             size="lg"
