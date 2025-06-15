@@ -3,7 +3,7 @@ import * as React from "react";
 import ProductCard from "@/components/ProductCard";
 import ChatModal from "@/components/ChatModal";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // Default coffee cup with empty/white label
@@ -34,6 +34,16 @@ export default function ProductPage() {
           </p>
         </div>
         <ProductCard mockImageUrl={mockImage} onClick={() => setChatOpen(true)} />
+        <div className="w-full flex justify-center mt-8">
+          <Button
+            size="lg"
+            className="flex gap-2 items-center px-10 py-4 text-base font-semibold shadow-lg"
+            onClick={() => navigate("/checkout", { state: { mockImage } })}
+          >
+            <ShoppingCart size={20} />
+            Checkout
+          </Button>
+        </div>
       </div>
       <ChatModal
         open={chatOpen}
