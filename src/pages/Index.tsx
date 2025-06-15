@@ -13,10 +13,10 @@ import { ThemeProvider } from "next-themes";
 
 // Sample gallery images (could be mock generations)
 const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=400&q=80",
+  "https://aiprotopia.com/cdn/shop/files/7425586111085640125_2048.jpg?v=1701710581&width=360",
+  "https://aiprotopia.com/cdn/shop/files/5011142461304942833_2048.jpg?v=1697815893&width=360",
+  "https://aiprotopia.com/cdn/shop/files/6854160563615963423_2048.jpg?v=1691695888&width=360",
+  "https://aiprotopia.com/cdn/shop/files/10472772735126723528_2048.jpg?v=1701528980&width=533",
 ];
 
 const PRODUCT = {
@@ -24,7 +24,7 @@ const PRODUCT = {
   price: "$8.99",
   description:
     "Design your own coffee cup! Generate a unique image using our AI chat and place it on your personal mockup.",
-  img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+  img: "https://groovy61crafts.com/cdn/shop/files/10784071453537122679_2048.jpg?v=1701529161",
 };
 
 const Index = () => {
